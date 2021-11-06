@@ -146,7 +146,7 @@ export default {
             },
             {
               field: 'guest_dns',
-              title: this.$t('network.text_585'),
+              title: this.$t('network.dns_server'),
             },
             {
               field: 'guest_domain',
@@ -154,6 +154,10 @@ export default {
               formatter: ({ cellValue }) => {
                 return cellValue || '-'
               },
+            },
+            {
+              field: 'guest_ntp',
+              title: this.$t('network.ntp_server'),
             },
           ],
         },
