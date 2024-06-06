@@ -93,7 +93,6 @@ export default {
   computed: {
     taskStages () {
       const stages = []
-      console.log(this.data)
       if (this.data.params) {
         if (this.data.params.__stages) {
           // stages
@@ -135,7 +134,12 @@ export default {
       if (this.data.params && this.data.params.__failed_reason) {
         const failed = {}
         failed.stage = this.data.params.__failed_reason.stage
-        failed.reason = JSON.parse(this.data.params.__failed_reason.reason)
+        failed.reason = this.data.params.__failed_reason.reason
+        try {
+          failed.reason = JSON.parse(this.data.params.__failed_reason.reason)
+        } catch (e) {
+          console.log(e)
+        }
         return yaml.dump(failed)
       }
       return null

@@ -1346,7 +1346,11 @@ export const getSubtaskCountTableColumn = () => {
     field: 'sub_task_count',
     formatter ({ row }) {
       if (row.sub_task_count > 0) {
-        return row.sub_task_count + '(' + row.succ_sub_task_cnt + '/' + row.fail_sub_task_cnt + ')'
+        if (row.sub_task_count > row.succ_sub_task_cnt) {
+          return row.sub_task_count + '(' + row.succ_sub_task_cnt + '/' + row.fail_sub_task_cnt + ')'
+        } else {
+          return row.sub_task_count
+        }
       } else {
         return '-'
       }
