@@ -101,7 +101,7 @@ export default {
     },
     genParams () {
       const ret = {
-        mac: this.params.server.macs,
+        mac: this.params.data[0].mac_addr,
         sub_ips: [],
         remove_sub_ips: [],
         count: 0,
