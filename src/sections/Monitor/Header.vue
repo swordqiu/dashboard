@@ -186,6 +186,7 @@ export default {
       default: () => {
         return [
           { label: i18n.t('refresh.auto.disable'), value: 0 },
+          { label: i18n.t('refresh.duration.seconds', [1]), value: 1 },
           { label: i18n.t('refresh.duration.seconds', [5]), value: 5 },
           { label: i18n.t('refresh.duration.seconds', [10]), value: 10 },
           { label: i18n.t('refresh.duration.seconds', [30]), value: 30 },
